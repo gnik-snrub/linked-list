@@ -1,0 +1,3 @@
+const node = () => {}
+
+const linkedList = () => {}
