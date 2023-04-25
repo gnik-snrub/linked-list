@@ -1,5 +1,3 @@
-const util = require('util')
-
 const node = () => {
   return {
     value: null,
@@ -43,6 +41,19 @@ const linkedList = () => {
 	  return count
   }
 
+  const at = (index) => {
+    let curr = head
+    let count = 0
+    while (count < index) {
+      if (curr.next === null) {
+        return null
+      }
+      curr = curr.next
+      count++
+    }
+    return curr
+  }
+
   const wrapper = {
     get head() {
       return head
@@ -50,7 +61,8 @@ const linkedList = () => {
     tail,
     prepend,
     append,
-    size
+    size,
+    at
   }
 
   return wrapper
