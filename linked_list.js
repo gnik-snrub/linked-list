@@ -54,6 +54,15 @@ const linkedList = () => {
     return curr
   }
 
+  const pop = () => {
+    if (!head || !head.next) {
+      head = null
+    } else {
+      const secondLastNode = size() - 2
+      at(size() - 2).next = null
+    }
+  }
+
   const wrapper = {
     get head() {
       return head
@@ -62,7 +71,8 @@ const linkedList = () => {
     prepend,
     append,
     size,
-    at
+    at,
+    pop,
   }
 
   return wrapper
