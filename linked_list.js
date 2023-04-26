@@ -74,6 +74,19 @@ const linkedList = () => {
     return false
   }
 
+  const find = (findValue) => {
+    let curr = head
+    let count = 0
+    while (curr) {
+      if (curr.value === findValue) {
+        return count
+      }
+      count++
+      curr = curr.next
+    }
+    return null
+  }
+
   const wrapper = {
     get head() {
       return head
@@ -85,6 +98,7 @@ const linkedList = () => {
     at,
     pop,
     contains,
+    find,
   }
 
   return wrapper
