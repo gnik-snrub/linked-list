@@ -87,6 +87,19 @@ const linkedList = () => {
     return null
   }
 
+  const toString = () => {
+    let listString = ''
+    let curr = head
+    while (curr) {
+      listString += '(' + curr.value + ')'
+      if (curr.next) {
+        listString += ' -> '
+      }
+      curr = curr.next
+    }
+    return listString
+  }
+
   const wrapper = {
     get head() {
       return head
@@ -99,6 +112,7 @@ const linkedList = () => {
     pop,
     contains,
     find,
+    toString
   }
 
   return wrapper
