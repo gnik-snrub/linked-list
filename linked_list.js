@@ -63,6 +63,17 @@ const linkedList = () => {
     }
   }
 
+  const contains = (searchValue) => {
+    let curr = head
+    while (curr) {
+      if (curr.value === searchValue) {
+        return true
+      }
+      curr = curr.next
+    }
+    return false
+  }
+
   const wrapper = {
     get head() {
       return head
@@ -73,6 +84,7 @@ const linkedList = () => {
     size,
     at,
     pop,
+    contains,
   }
 
   return wrapper
