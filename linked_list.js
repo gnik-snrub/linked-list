@@ -100,6 +100,26 @@ const linkedList = () => {
     return listString
   }
 
+  const insertAt = (newValue, index) => {
+    const newNode = node()
+    newNode.value = newValue
+    if (index === 0) {
+      newNode.next = head
+      head = newNode
+    } else {
+      newNode.next = at(index)
+      at(index - 1).next = newNode
+    }
+  }
+
+  const removeAt = (index) => {
+    if (index === 0) {
+      head = head.next
+    } else {
+      at(index - 1).next = at(index).next
+    }
+  }
+
   const wrapper = {
     get head() {
       return head
@@ -112,7 +132,9 @@ const linkedList = () => {
     pop,
     contains,
     find,
-    toString
+    toString,
+    insertAt,
+    removeAt
   }
 
   return wrapper
